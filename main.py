@@ -5,4 +5,7 @@
 
 """
 
-import facebook_classes as fb
+from facebook import User, Group, Post, Timeline
+
+if __name__ == '__main__':
+    print("Welcome to Facebook!")
