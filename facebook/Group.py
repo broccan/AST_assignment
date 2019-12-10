@@ -4,8 +4,8 @@ class Group:
 
     """
 
-    def __init__(self, group_name, admin):
-     """
+    def __init__(self, name, admin):
+        """
         Constructor for the Group class
 
         Parameters
@@ -14,21 +14,12 @@ class Group:
             name of the group
         admin: User
             User that creates the group
-
-        Returns
-        -------
-        Bool
-            True if it successfully created the group
-            False otherwise
-
         """
 
-        self.group_name = group_name
+        self.name = name
         self.admin = admin
         self.posts = list()
         self.users = list()
-
-        return True
 
     def deleteGroup(self):
         pass
@@ -109,7 +100,7 @@ class Group:
             True if the user was successfully removed 
             False otherwise
         """
-        if(admin == self.admin)
+        if(admin == self.admin):
             try:
                 self.users.remove(user)
                 return True

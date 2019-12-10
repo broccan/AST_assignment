@@ -1,5 +1,5 @@
 from datetime import datetime
-import Post
+from . import Post
 
 
 class User:
@@ -8,16 +8,13 @@ class User:
 
     """
 
-
-    def __init__(self, first_name: str, last_name: str, birthday: str):
+    def __init__(self, name: str, birthday: str, location: str):
         """
         Constructor for the User class
 
         Parameters
         ----------
-        first_name: str
-            first name of the user
-        last_name: str
+        name: str
             last name of the user
         birthday: str
             birthday of the user, format dd/mm/yyy
@@ -25,12 +22,12 @@ class User:
             current location
 
         """
-        #  self.age = self._get_age(birthday)  Future implementation
-
-        self.full_name = first_name + " " + last_name
-        self.first_name = first_name
-        self.last_name = last_name
+        # Sign up values
+        self.name = name
         self.birthday = birthday
+        self.location = location
+
+        # variables than later get change
         self.bio = ''
         self.friend_list = []
         self.group_list = []
@@ -71,7 +68,7 @@ class User:
             1 if it successfully added the user to friend list
             0 otherwise
         """
-        self.freind_list.append(user)
+        self.friend_list.append(user)
         return True
 
     def joinGroup(self, group):
@@ -122,6 +119,15 @@ class User:
         Parameters
         ----------
         """
-        
+
+    def showProfile(self):
+        print("┌───────────── Profile ─────────────┐")
+        print("Name: ", self.name)
+        print("Birthday: ", self.birthday)
+        print("Location: ", self.location)
+        print(" ")
+        if not self.bio == '':
+            print(self.bio)
+        print("└───────────────────────────────────┘")
 
     
