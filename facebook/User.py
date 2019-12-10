@@ -1,5 +1,7 @@
 from datetime import datetime
 import Post
+
+
 class User:
     """
     Class for implementing User
@@ -69,7 +71,7 @@ class User:
             1 if it successfully added the user to friend list
             0 otherwise
         """
-        freind_list.append(user)
+        self.freind_list.append(user)
         return True
 
     def joinGroup(self, group):
@@ -90,7 +92,7 @@ class User:
         """
         try:
             group.addUser(self)
-            group_list.append(group)
+            self.group_list.append(group)
         except:
             return False
         return True
@@ -110,8 +112,8 @@ class User:
             Post
                 returns and instance of the post created
         """
-        post_list.append(Post(self, content))
-        return post_list[-1]
+        self.post_list.append(Post(self, content))
+        return self.post_list[-1]
 
     def deletePost(self, post):
         """
