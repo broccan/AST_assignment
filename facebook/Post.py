@@ -16,6 +16,7 @@ class Post:
         """
         self.owner    = owner
         self.content  = content
+        self.likes    = []
 
     def showPost(self):
         """
@@ -32,3 +33,17 @@ class Post:
         """
         print("{} by {}".format(self.content, self.owner.full_name))
 
+    def addLike(self, user):
+        """
+        Method to add users who like the post
+
+        Parameters
+        ---------
+        user: User
+
+        Returns
+        -------
+        None
+
+        """
+        self.likes.append(user)
