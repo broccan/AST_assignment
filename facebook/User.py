@@ -1,29 +1,38 @@
+from datetime import datetime
+import Post
 class User:
     """
     Class for implementing User
 
     """
-    def __init__(self, name, birthday, location):
+
+    bio = ''
+    freind_list = []
+    group_list = []
+    post_list = []
+
+    def __init__(self, first_name: str, last_name: str, birthday: str):
         """
         Constructor for the User class
 
         Parameters
         ----------
-        name: str
-            name of the user
+        first_name: str
+            first name of the user
+        last_name: str
+            last name of the user
         birthday: str
-            birthday of the user
+            birthday of the user, format dd/mm/yyy
         location: str
             current location
 
-        Returns
-        -------
-        Bool
-            1 if it successfully created the user
-            0 otherwise
-
         """
-        pass
+        #  self.age = self._get_age(birthday)  Future implementation
+
+        self.full_name = first_name + " " + last_name
+        self.first_name = first_name
+        self.last_name = last_name
+        self.birthday = birthday
 
     def modifyBio(self, bio):
         """
@@ -41,7 +50,8 @@ class User:
             1 if it successfully modified bio
             0 otherwise
         """
-        pass
+        self.bio = bio
+        return True
 
     def addFriend(self, user):
         """
@@ -59,7 +69,8 @@ class User:
             1 if it successfully added the user to friend list
             0 otherwise
         """
-        pass
+        freind_list.append(user)
+        return True
 
     def joinGroup(self, group):
         """
@@ -77,24 +88,38 @@ class User:
             1 if it successfully added the user to friend list
             0 otherwise
         """
-        pass
-    
+        try:
+            group.addUser(self)
+            group_list.append(group)
+        except:
+            return False
+        return True
+
+
     def createPost(self, content):
         """
-        Method to add friend
+        Method to add a post
 
         Parameters
         ----------
+        content : str
+            The string contents in the post
+
+        Returns
+        ----------
+            Post
+                returns and instance of the post created
         """
-        pass
+        post_list.append(Post(self, content))
+        return post_list[-1]
 
     def deletePost(self, post):
         """
-        Method to add friend
+        Method to remove a post, yet to be implemented
 
         Parameters
         ----------
         """
-        pass
+        
 
     
