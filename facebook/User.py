@@ -8,10 +8,6 @@ class User:
 
     """
 
-    bio = ''
-    freind_list = []
-    group_list = []
-    post_list = []
 
     def __init__(self, first_name: str, last_name: str, birthday: str):
         """
@@ -35,6 +31,10 @@ class User:
         self.first_name = first_name
         self.last_name = last_name
         self.birthday = birthday
+        self.bio = ''
+        self.friend_list = []
+        self.group_list = []
+        self.post_list = []
 
     def modifyBio(self, bio):
         """
