@@ -1,5 +1,5 @@
 from datetime import datetime
-from . import Post
+from Post import Post
 
 
 class User:
