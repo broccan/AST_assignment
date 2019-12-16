@@ -1,3 +1,5 @@
+from datetime import datetime
+
 class Post:
     """
     Class for implementing Post
@@ -14,9 +16,10 @@ class Post:
         content: str
             text contained by the post
         """
-        self.owner    = owner
-        self.content  = content
-        self.likes    = []
+        self.owner = owner
+        self.content = content
+        self.timestamp = datetime.now()
+        self.likes = []
 
     def showPost(self):
         """
@@ -31,7 +34,9 @@ class Post:
         None
 
         """
-        print("{} by {}".format(self.content, self.owner.full_name))
+        print("{} ──────────────────────────".format(self.owner.name))
+        print("{:%d, %b %Y}".format(self.timestamp))
+        print("{}".format(self.content), end="\n\n")
 
     def addLike(self, user):
         """
