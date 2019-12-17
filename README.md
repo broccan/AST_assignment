@@ -1,11 +1,11 @@
 # AST assignment: Model Facebook
 
 Authors:
-  - Alan Gomez  (responsible for group)
-  - Samuel Parra   (responsible for main)
-  - Brennan Penfold   (responsible for user)
-  - Anna Rose   (responsible for timeline)
-  - Aswinkumar Vijayananth   (responsible for post)
+  - Alan Gomez  
+  - Samuel Parra 
+  - Brennan Penfold 
+  - Anna Rose 
+  - Aswinkumar Vijayananth 
 
 Facebook assignment for the HBRS Advanced Software Technology course. The purpose is to represent the basic functionality of Facebook through a set of classes.
 
