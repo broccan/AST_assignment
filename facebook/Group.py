@@ -1,10 +1,13 @@
+from .User import User
+from .Post import Post
+
 class Group:
     """
     Class for implementing Groups
 
     """
 
-    def __init__(self, name, admin):
+    def __init__(self, name: str, admin: User):
         """
         Constructor for the Group class
 
@@ -24,7 +27,7 @@ class Group:
     def deleteGroup(self):
         pass
     
-    def addPost(self, new_post):
+    def addPost(self, new_post: Post):
         """
         Method for add a new post to the group
 
@@ -84,7 +87,7 @@ class Group:
         except:
             return False
 
-    def removeUser(self, admin, member):
+    def removeUser(self, admin, user):
         """
         Method to remove a User from the group
 
