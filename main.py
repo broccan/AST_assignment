@@ -11,14 +11,6 @@ from facebook.Group import Group
 from facebook.Timeline import Timeline
 from facebook.Interface import *
 
-database = {
-    "users":{},
-    "posts":{},
-    "groups":{}
-}
-
-
-
 if __name__ == '__main__':
 
     while True:
