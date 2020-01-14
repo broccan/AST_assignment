@@ -4,4 +4,5 @@ sys.path.append(".")
 sys.path.append('..')
 
 
-class post_unit_tests(unittest.TestCase):
+class PostUnitTests(unittest.TestCase):
+    pass

@@ -9,9 +9,12 @@ import os
 from facebook.User import User
 from facebook.Group import Group
 from facebook.Timeline import Timeline
+from facebook.Database import Database
 from facebook.Interface import *
 
 if __name__ == '__main__':
+
+    database = Database()
 
     while True:
         user = None
@@ -29,10 +32,7 @@ if __name__ == '__main__':
 
         elif opt == 1:
             user_name = input("Username: ")
-            try:
-                user = database["users"][user_name]
-            except KeyError:
-                print("Username not found!")
+            user = database.getUser(user_name)
 
         elif opt == 2:
             print("Sign up!! (by giving us your information your soul belong to us eternally)")
@@ -40,7 +40,7 @@ if __name__ == '__main__':
             birthday = input("Birthday: ")
             location = input("Location: ")
             user = User(name, birthday, location)
-            database["users"][user.name] = user
+            database.add("users", user)
 
         else:
             print("Please enter a valid option")

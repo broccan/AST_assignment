@@ -8,7 +8,7 @@ from facebook.User import User
 from facebook.Group import Group
 from facebook.Post import Post
 
-class group_unit_tests(unittest.TestCase):
+class GroupUnitTests(unittest.TestCase):
 
     def test_create_group(self):
         group_name = 'MyGroup'

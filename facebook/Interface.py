@@ -1,4 +1,5 @@
 import os
+from .Database import Database
 
 def clear_screen():
     os.system('cls' if os.name=='nt' else 'clear')
@@ -6,7 +7,7 @@ def clear_screen():
 
 def showTimelineActions(user):
     clear_screen()
-    #timeline = Timeline()
+
     while True:
         print("What would you like to do?")
         print("1. See my timeline")
@@ -43,6 +44,7 @@ def showTimelineActions(user):
 
 # Friend methods
 def showFriendsActions(user):
+    database = Database.getInstance()
     while True:
         clear_screen()
         print("What would you like to do?")
@@ -58,12 +60,13 @@ def showFriendsActions(user):
             clear_screen()
             print("Add a friend by selecting their number (0 to not select anyone)")
             
-            users = {}
+            user_names = []
+            users = database.getAll('users')
 
-            for i, name in enumerate(database['users'].keys()):
+            for i, name in enumerate(users.keys()):
                 if not name == user.name:
                     print("{} | {}".format(i+1, name)) 
-                    users[i+1] = name
+                    user_names[i+1] = name
 
             
             opt = int(input("opt"))
@@ -71,7 +74,7 @@ def showFriendsActions(user):
             if opt == 0:
                 continue
             
-            user.addFriend(database['users'][users[opt]])
+            user.addFriend(database.get('users', user_names[opt]))
         
 
 # Group methods

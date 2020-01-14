@@ -8,7 +8,7 @@ from facebook.Timeline import Timeline
 from facebook.Post import Post
 
 
-class user_unit_tests(unittest.TestCase):
+class UserUnitTests(unittest.TestCase):
     def test_user_init(self):
         try:
             User("joe", "23/09/2000", "Bonn")
